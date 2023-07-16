@@ -7,20 +7,23 @@ public class HealthBar : MonoBehaviour
 {
     public static Image healthBar;
 
-    float value;
+    
+    float dmg = 0.3f;
 
     private void Start()
     {
         healthBar = GetComponent<Image>(); 
     }
+    
+    public void SetHealthBarValue(float value) { healthBar.fillAmount = value; }
 
-    public void SetHealthBarValue(float value) { healthBar.fillAmount = value;}
-
-    public static float GetHealthBarValue() { return healthBar.fillAmount; }
+    public  float GetHealthBarValue() { return healthBar.fillAmount; }
 
     public void Health()
     {
-        SetHealthBarValue(GetHealthBarValue() - 0.03f);
+        
+        SetHealthBarValue(GetHealthBarValue() - dmg);
+        
         if (healthBar.fillAmount <= 0 )
         {
             Debug.Log("Lose");

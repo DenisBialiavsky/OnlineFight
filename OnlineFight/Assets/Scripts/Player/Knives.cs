@@ -5,7 +5,8 @@ using UnityEngine;
 public class Knives : MonoBehaviour
 {
     public float speed;
-    public float dmg;
+    public float dmg = 0.3f;
+    public float dmgBar = 0.3f;
     public float lifetime;
     public float distance;
     public LayerMask whatIsSolid;
@@ -19,7 +20,11 @@ public class Knives : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitinfo)
     {
-        Debug.Log(hitinfo.name);
+        Enemy enemy = hitinfo.GetComponent<Enemy>();
+        if (enemy != null )
+        {
+            enemy.TakeDamage(dmg);
+        }
         Destroy(gameObject);
     }
     //private void Update()
