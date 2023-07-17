@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 8820d10c713a8a44480c33939c3ad5ce
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 0e4bf4e1e7bc0ed40a2f9dbe03483ec4
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: fbb672396f86ce1448b04322e3cc848d, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 90247525ec31a634f8f6881e70717803, type: 2}

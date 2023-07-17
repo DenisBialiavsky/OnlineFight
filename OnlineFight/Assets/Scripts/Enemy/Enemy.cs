@@ -11,12 +11,11 @@ public class Enemy : MonoBehaviour
 
     public GameObject deathEffect;
 
-    
-    public void TakeDamage(float damage)
+    public void TakeDamage(float dmg)
     {
-        HealthBar healthbar = GetComponent<HealthBar>();
-        healthEnemy -= damage;
-        healthbar.SetHealthBarValue(healthbar.GetHealthBarValue() - dmg);
+        //HealthBar healthbar = GetComponent<HealthBar>();
+        healthEnemy -= dmg;
+        //healthbar.SetHealthBarValue(healthbar.GetHealthBarValue() - dmg);
 
         if (healthEnemy <= 0)
         {
@@ -30,13 +29,4 @@ public class Enemy : MonoBehaviour
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
-
-    //private void Update()
-    //{
-    //    if (healthEnemy <= 0)
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
-   
 }

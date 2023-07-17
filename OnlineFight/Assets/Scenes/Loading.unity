@@ -378,6 +378,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 2347099753918107662, guid: aab760997e0c7124d8300479ef165152, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347099753918107662, guid: aab760997e0c7124d8300479ef165152, type: 3}
+      propertyPath: nameNextScene
+      value: Lobby
+      objectReference: {fileID: 0}
     - target: {fileID: 2347099753933824141, guid: aab760997e0c7124d8300479ef165152, type: 3}
       propertyPath: m_margin.z
       value: -94.53275

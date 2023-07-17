@@ -6,8 +6,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Photon.Pun;
 
-public class SceneLoading : MonoBehaviour
+public class SceneLoading : MonoBehaviourPunCallbacks
 {
     public string nameNextScene = "Lobby";
 
@@ -22,6 +23,7 @@ public class SceneLoading : MonoBehaviour
 
     void Start()
     {
+        PhotonNetwork.ConnectUsingSettings();
         PlayerPrefs.SetString("current_scene", nameNextScene);
         SceneManager.LoadScene("Loading");
         if (SceneManager.GetActiveScene().name == "Loading") StartCoroutine("Async_COR", PlayerPrefs.GetString("current_scene")); 
@@ -38,10 +40,10 @@ public class SceneLoading : MonoBehaviour
             loadingProgress = Mathf.Clamp01(async_operation.progress / 0.9f);
             progressText.text = $"Loading...{(loadingProgress * 100).ToString("0")}%";
             progressBarImage.fillAmount = loadingProgress;
-           
+            
             yield return null;
         }
-
+        
     }
 }
 
